@@ -53,16 +53,19 @@ class UserManagement extends React.Component<Props> {
               </button>
             </div>
           ) : null}
-          <PaginatedList
-            data={this.props.usersList}
-            onItemRender={(user: any) => (
-              <UserCard
-                user={user}
-                onUserSelectionChanged={this.handleUserSelection}
-                isSelected={this.props.selectedUsers.indexOf(user.id) !== -1}
-              />
-            )}
-          />
+          {this.props.usersList.length ? (
+            <PaginatedList
+              data={this.props.usersList}
+              onItemRender={(user: any) => (
+                <UserCard
+                  key={user.id}
+                  user={user}
+                  onUserSelectionChanged={this.handleUserSelection}
+                  isSelected={this.props.selectedUsers.indexOf(user.id) !== -1}
+                />
+              )}
+            />
+          ) : null}
         </div>
       </div>
     );
