@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/klaus-app/static/css/main.50a5e965.chunk.css",
-    "main.js": "/klaus-app/static/js/main.917c4b40.chunk.js",
-    "main.js.map": "/klaus-app/static/js/main.917c4b40.chunk.js.map",
+    "main.css": "/klaus-app/static/css/main.4fceba50.chunk.css",
+    "main.js": "/klaus-app/static/js/main.0579219d.chunk.js",
+    "main.js.map": "/klaus-app/static/js/main.0579219d.chunk.js.map",
     "runtime-main.js": "/klaus-app/static/js/runtime-main.6e866538.js",
     "runtime-main.js.map": "/klaus-app/static/js/runtime-main.6e866538.js.map",
     "static/js/2.a04a27e9.chunk.js": "/klaus-app/static/js/2.a04a27e9.chunk.js",
     "static/js/2.a04a27e9.chunk.js.map": "/klaus-app/static/js/2.a04a27e9.chunk.js.map",
     "index.html": "/klaus-app/index.html",
-    "precache-manifest.a24391e23cde732ff39f7c1598571f33.js": "/klaus-app/precache-manifest.a24391e23cde732ff39f7c1598571f33.js",
+    "precache-manifest.81ea22c5c0595f5523a80ba214d6d17b.js": "/klaus-app/precache-manifest.81ea22c5c0595f5523a80ba214d6d17b.js",
     "service-worker.js": "/klaus-app/service-worker.js",
-    "static/css/main.50a5e965.chunk.css.map": "/klaus-app/static/css/main.50a5e965.chunk.css.map",
+    "static/css/main.4fceba50.chunk.css.map": "/klaus-app/static/css/main.4fceba50.chunk.css.map",
     "static/js/2.a04a27e9.chunk.js.LICENSE.txt": "/klaus-app/static/js/2.a04a27e9.chunk.js.LICENSE.txt",
     "static/media/PaginatedList.module.css": "/klaus-app/static/media/SFProText-Regular.85bd46c1.ttf",
     "static/media/UserManagement.module.css": "/klaus-app/static/media/SFProText-Medium.70830fa4.ttf"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.6e866538.js",
     "static/js/2.a04a27e9.chunk.js",
-    "static/css/main.50a5e965.chunk.css",
-    "static/js/main.917c4b40.chunk.js"
+    "static/css/main.4fceba50.chunk.css",
+    "static/js/main.0579219d.chunk.js"
   ]
 }
