@@ -1,5 +1,6 @@
 @value colors: "../../styles/colors.css";
-@value (account_manager_bg,
+@value (primary_color,
+  account_manager_bg,
   account_manager_text,
   admin_bg,
   admin_text,
