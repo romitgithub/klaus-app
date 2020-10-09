@@ -1,5 +1,6 @@
 import ApiService from "services/ApiService";
 import ACTION_TYPES from "./actionType";
+import data from "data/users.json";
 
 export const fetchUsersList = () => {
   return (dispatch: Function) => {

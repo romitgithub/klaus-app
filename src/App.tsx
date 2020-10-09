@@ -11,7 +11,7 @@ function App() {
     <div className="app-container">
       <Provider store={store}>
         <Router basename="/">
-          <Route path="/" exact component={UserManagement} />
+          <Route path="/" component={UserManagement} />
         </Router>
       </Provider>
     </div>

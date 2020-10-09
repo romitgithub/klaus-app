@@ -4,6 +4,21 @@ import editIcon from "assets/img/edit.png";
 import deleteIcon from "assets/img/delete.png";
 import styles from "./UserCard.module.css";
 
+const getClassNameForRole = (role: string) => {
+  switch (role) {
+    case "ADMIN":
+      return styles.admin;
+    case "AGENT":
+      return styles.agent;
+    case "EXTERNAL_REVIEWER":
+      return styles.externalReviewer;
+    case "ACCOUNT_MANAGER":
+      return styles.accountManager;
+    default:
+      return "";
+  }
+};
+
 interface Props {
   user: any;
   onUserSelectionChanged: Function;
@@ -34,7 +49,9 @@ export default ({ user, onUserSelectionChanged, isSelected }: Props) => {
         <span className={styles.email}>{user.email}</span>
       </div>
       <div className={styles.roleBlock}>
-        <span className={styles.role}>{getUserRoleName(user.role)}</span>
+        <span className={`${styles.role} ${getClassNameForRole(user.role)}`}>
+          {getUserRoleName(user.role)}
+        </span>
       </div>
       <div
         className={`${styles.actionButtons} ${

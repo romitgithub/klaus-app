@@ -1,3 +1,13 @@
+@value colors: "../../styles/colors.css";
+@value (account_manager_bg,
+  account_manager_text,
+  admin_bg,
+  admin_text,
+  agent_bg,
+  agent_text,
+  external_reviewer_bg,
+  external_reviewer_text) from colors;
+
 @font-face {
   font-family: "SFProText";
   src: url(../../assets/fonts/SFProText-Regular.ttf) format("truetype");
@@ -28,7 +38,7 @@
 
 .selectedContainer {
   background: #F7FAFC;
-  border-left: 4px solid #475DE5;
+  border-left: 4px solid primary_color;
 }
 
 .checkbox {
@@ -90,6 +100,26 @@
   background: #C8E7F9;
   border-radius: 4px;
   padding: 4px;
+}
+
+.admin {
+  background: admin_bg;
+  color: admin_text;
+}
+
+.agent {
+  background: agent_bg;
+  color: agent_text;
+}
+
+.externalReviewer {
+  background: external_reviewer_bg;
+  color: external_reviewer_text;
+}
+
+.accountManager {
+  background: account_manager_bg;
+  color: account_manager_text;
 }
 
 .actionButtons {

@@ -1,3 +1,6 @@
+@value colors: "../../styles/colors.css";
+@value primary_color from colors;
+
 @font-face {
   font-family: "SFProText";
   src: url(../../assets/fonts/SFProText-Regular.ttf) format("truetype");
@@ -66,16 +69,12 @@
   color: #a0aec0;
 }
 
-input[type="checkbox"]:checked {
-  background: #475de5;
-}
-
 .connectUsersBtn {
   border: none;
   outline: none;
   height: 40px;
   margin-left: 8px;
-  background: #475de5;
+  background: primary_color;
   border-radius: 4px;
   padding: 4px 12px;
   font-family: "SFProText-Medium";
