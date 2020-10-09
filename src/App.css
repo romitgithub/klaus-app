@@ -1,7 +1,9 @@
 .app-container {
-  min-height: 100vh;
+  height: 100vh;
   min-width: 100%;
   background-color: #EDF2F7;
   box-sizing: border-box;
   padding: 24px;
+  display: flex;
+  flex-direction: column;
 }

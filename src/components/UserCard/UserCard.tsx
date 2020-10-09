@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { getUserRoleName } from "services/utils";
 import editIcon from "assets/img/edit.png";
 import deleteIcon from "assets/img/delete.png";
@@ -11,11 +11,15 @@ interface Props {
 }
 
 export default ({ user, onUserSelectionChanged, isSelected }: Props) => {
+  const [isHovering, setIsHovering] = useState(false);
+
   return (
     <div
       className={`${styles.container} ${
         isSelected ? styles.selectedContainer : null
       }`}
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
       onClick={() => onUserSelectionChanged(!isSelected, user.id)}
     >
       <input
@@ -24,7 +28,7 @@ export default ({ user, onUserSelectionChanged, isSelected }: Props) => {
         checked={isSelected}
         onClick={(e: any) => onUserSelectionChanged(e.target.checked, user.id)}
       />
-      <img className={styles.avatar} src={user.avatar} />
+      <img className={styles.avatar} src={user.avatar} alt="user-avatar" />
       <div className={styles.nameEmailBlock}>
         <span className={styles.name}>{user.name}</span>
         <span className={styles.email}>{user.email}</span>
@@ -32,13 +36,26 @@ export default ({ user, onUserSelectionChanged, isSelected }: Props) => {
       <div className={styles.roleBlock}>
         <span className={styles.role}>{getUserRoleName(user.role)}</span>
       </div>
-      <div>
+      <div
+        className={`${styles.actionButtons} ${
+          isHovering ? styles.isHover : ""
+        }`}
+      >
         <button className={styles.actionButton}>
           {" "}
-          <img src={editIcon} className={styles.editIcon} /> Edit
+          <img
+            src={editIcon}
+            alt="edit user"
+            className={styles.editIcon}
+          />{" "}
+          Edit
         </button>
         <button className={styles.actionButton}>
-          <img src={deleteIcon} className={styles.deleteIcon} />
+          <img
+            src={deleteIcon}
+            alt="delete user"
+            className={styles.deleteIcon}
+          />
         </button>
       </div>
     </div>

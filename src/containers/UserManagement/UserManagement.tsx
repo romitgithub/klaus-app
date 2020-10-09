@@ -5,6 +5,7 @@ import PaginatedList from "components/PaginatedList";
 import UserCard from "components/UserCard/";
 import editIcon from "assets/img/edit.png";
 import deleteIcon from "assets/img/delete.png";
+import searchIcon from "assets/img/search.png";
 
 import styles from "./UserManagement.module.css";
 
@@ -36,7 +37,22 @@ class UserManagement extends React.Component<Props> {
     return (
       <div className={styles.container}>
         <div className={styles.header}>
-          <div className={styles.title}>User Management</div>
+          <div className={styles.title}>Account users</div>
+          <div className={styles.filterOptions}>
+            <div className={styles.searchBox}>
+              <img
+                src={searchIcon}
+                alt="Search Users"
+                className={styles.searchIcon}
+              />
+              <input
+                placeholder="Search"
+                type="text"
+                className={styles.searchInput}
+              />
+            </div>
+            <button className={styles.connectUsersBtn}>Connect Users</button>
+          </div>
         </div>
         <div className={styles.list}>
           {this.props.selectedUsers.length ? (
@@ -46,13 +62,29 @@ class UserManagement extends React.Component<Props> {
               </span>
               <button className={styles.listActionButton}>
                 {" "}
-                <img src={editIcon} className={styles.editIcon} /> Edit
+                <img
+                  src={editIcon}
+                  alt="edit users"
+                  className={styles.editIcon}
+                />{" "}
+                Edit
               </button>
               <button className={styles.listActionButton}>
-                <img src={deleteIcon} className={styles.deleteIcon} /> Delete
+                <img
+                  src={deleteIcon}
+                  alt="delete users"
+                  className={styles.deleteIcon}
+                />{" "}
+                Delete
               </button>
             </div>
-          ) : null}
+          ) : (
+            <div className={styles.listActionHeader}>
+              <span className={styles.listActionTitle}>
+                {this.props.usersList.length} users
+              </span>
+            </div>
+          )}
           {this.props.usersList.length ? (
             <PaginatedList
               data={this.props.usersList}
