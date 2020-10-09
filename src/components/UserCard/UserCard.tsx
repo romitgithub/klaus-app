@@ -1,5 +1,7 @@
 import React from "react";
 import { getUserRoleName } from "services/utils";
+import editIcon from "assets/img/edit.png";
+import deleteIcon from "assets/img/delete.png";
 import styles from "./UserCard.module.css";
 
 interface Props {
@@ -29,6 +31,15 @@ export default ({ user, onUserSelectionChanged, isSelected }: Props) => {
       </div>
       <div className={styles.roleBlock}>
         <span className={styles.role}>{getUserRoleName(user.role)}</span>
+      </div>
+      <div>
+        <button className={styles.actionButton}>
+          {" "}
+          <img src={editIcon} className={styles.editIcon} /> Edit
+        </button>
+        <button className={styles.actionButton}>
+          <img src={deleteIcon} className={styles.deleteIcon} />
+        </button>
       </div>
     </div>
   );

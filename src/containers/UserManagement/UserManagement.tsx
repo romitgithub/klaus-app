@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import * as actions from "./actions";
 import PaginatedList from "components/PaginatedList";
 import UserCard from "components/UserCard/";
+import editIcon from "assets/img/edit.png";
+import deleteIcon from "assets/img/delete.png";
 
 import styles from "./UserManagement.module.css";
 
@@ -42,6 +44,13 @@ class UserManagement extends React.Component<Props> {
               <span className={styles.listActionTitle}>
                 {this.props.selectedUsers.length} users selected
               </span>
+              <button className={styles.listActionButton}>
+                {" "}
+                <img src={editIcon} className={styles.editIcon} /> Edit
+              </button>
+              <button className={styles.listActionButton}>
+                <img src={deleteIcon} className={styles.deleteIcon} /> Delete
+              </button>
             </div>
           ) : null}
           <PaginatedList
