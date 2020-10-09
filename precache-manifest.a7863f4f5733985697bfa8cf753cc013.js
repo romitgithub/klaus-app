@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1ab25fb616f82ba8325818757191bbcc",
+    "revision": "a866e01b047b3ce260f5eb8dfd08dc08",
     "url": "/klaus-app/index.html"
   },
   {
-    "revision": "6b3959e7cac2ac7f1157",
-    "url": "/klaus-app/static/css/main.b85d1ead.chunk.css"
+    "revision": "01a6b872e196607e169d",
+    "url": "/klaus-app/static/css/main.50a5e965.chunk.css"
   },
   {
     "revision": "70359be633e531edb81f",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/klaus-app/static/js/2.afd25754.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "6b3959e7cac2ac7f1157",
+    "revision": "01a6b872e196607e169d",
     "url": "/klaus-app/static/js/main.994d091e.chunk.js"
   },
   {
