@@ -1,0 +1,63 @@
+@font-face {
+  font-family: "SFProText";
+  src: url(../../assets/fonts/SFProText-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "SFProText-Bold";
+  src: url(../../assets/fonts/SFProText-Bold.ttf) format("truetype");
+}
+
+.container {
+  width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  padding: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.title {
+  font-family: 'SFProText-Bold';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+  /* identical to box height, or 27px */
+
+
+  /* default/gray/90 */
+
+  color: #1A202C;
+}
+
+.list {
+  background: #FFFFFF;
+  border-radius: 8px;
+}
+
+.listActionHeader {
+  padding: 40px;
+  padding-top: 30px;
+  padding-bottom: 0;
+}
+
+.listActionTitle {
+  font-family: 'SFProText-Bold';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  /* identical to box height, or 24px */
+
+
+  /* default/gray/80 */
+
+  color: #2D3748;
+}

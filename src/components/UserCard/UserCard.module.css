@@ -1,0 +1,93 @@
+@font-face {
+  font-family: "SFProText";
+  src: url(../../assets/fonts/SFProText-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "SFProText-Bold";
+  src: url(../../assets/fonts/SFProText-Bold.ttf) format("truetype");
+}
+
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 14px;
+  margin: 4px 8px;
+  padding: 16px;
+  background-color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  border-left: 4px solid transparent;
+}
+
+.container:hover {
+  background: #F7FAFC;
+}
+
+.selectedContainer {
+  background: #F7FAFC;
+  border-left: 4px solid #475DE5;
+}
+
+.checkbox {
+  margin-right: 12px;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.nameEmailBlock {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.name {
+  font-family: 'SFProText-Bold';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  /* identical to box height, or 21px */
+
+
+  /* default/gray/90 */
+
+  color: #1A202C;
+}
+
+.email {
+  font-family: 'SFProText';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 150%;
+  /* identical to box height, or 21px */
+
+
+  /* default/gray/60 */
+
+  color: #718096;
+}
+
+.roleBlock {
+  flex: 1;
+}
+
+.role {
+  font-family: 'SFProText';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 150%;
+  text-transform: capitalize;
+  background: #C8E7F9;
+  border-radius: 4px;
+  padding: 4px;
+}

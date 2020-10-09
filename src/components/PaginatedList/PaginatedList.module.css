@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "SFProText";
+  src: url(../../assets/fonts/SFProText-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "SFProText-Bold";
+  src: url(../../assets/fonts/SFProText-Bold.ttf) format("truetype");
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 24px 12px;
+}
+
+.list {
+  width: 100%;
+}
+
+.loadMoreBtn {
+  font-family: 'SFProText-Bold';
+  margin: 12px 8px 0 8px;
+  padding: 24px;
+  background-color: white;
+  width: 784px;
+  border: none;
+  outline: none;
+  color: rgba(71, 93, 229, 1);
+  cursor: pointer;
+}
