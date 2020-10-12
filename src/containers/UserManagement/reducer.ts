@@ -14,7 +14,18 @@ const userManagementReducer = (
     case ACTION_TYPES.FETCH_USER_LIST:
       return { ...state, usersList: action.data };
     case ACTION_TYPES.UPDATE_SELECTED_USERS:
-      return { ...state, selectedUsers: action.data };
+      return { ...state, selectedUsers: action.data, allUsersSelected: action.data.length === state.pagination.perPage ? true: false };
+    case ACTION_TYPES.TOGGLE_ALL_USERS_SELECTION:
+      return {
+        ...state,
+        selectedUsers: action.data.selectedUsers,
+        allUsersSelected: action.data.allSelected,
+      };
+    case ACTION_TYPES.TOGGLE_SORT:
+      return {
+        ...state,
+        [action.data.sortBy]: action.data.sort
+      }
     default:
       return state;
   }

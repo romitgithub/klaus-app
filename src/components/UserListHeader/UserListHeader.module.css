@@ -1,0 +1,50 @@
+@font-face {
+  font-family: "SFProText-Medium";
+  src: url(../../assets/fonts/SFProText-Medium.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "SFProText-Bold";
+  src: url(../../assets/fonts/SFProText-Bold.ttf) format("truetype");
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 14px;
+  margin: 4px 8px;
+  padding: 16px;
+  background-color: white;
+  border-radius: 4px;
+  border-left: 4px solid transparent;
+}
+
+.checkbox {
+  margin-right: 12px;
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  font-family: 'SFProText-Medium';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 150%;
+  color: #718096;
+}
+
+.role {
+  flex: 1;
+  font-family: 'SFProText-Medium';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 150%;
+  color: #718096;
+  cursor: pointer;
+}
+

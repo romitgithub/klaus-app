@@ -8,12 +8,18 @@ import deleteIcon from "assets/img/delete.png";
 import searchIcon from "assets/img/search.png";
 
 import styles from "./UserManagement.module.css";
+import UserListHeader from "components/UserListHeader/UserListHeader";
 
 interface Props {
   fetchUsersList: Function;
   usersList: any[];
+  allUsersSelected: boolean;
   selectedUsers: any[];
+  pagination: any;
+  sortByRole: boolean;
   updateSelectedUsers: Function;
+  toggleAllUsersSelection: Function;
+  toggleUserListSort: Function;
 }
 
 class UserManagement extends React.Component<Props> {
@@ -25,7 +31,7 @@ class UserManagement extends React.Component<Props> {
     const { selectedUsers } = this.props;
     if (isSelected && selectedUsers.indexOf(userId) === -1) {
       selectedUsers.push(userId);
-    } else if (!isSelected) {
+    } else if (!isSelected && selectedUsers.indexOf(userId) !== -1) {
       selectedUsers.splice(selectedUsers.indexOf(userId), 1);
     }
 
@@ -88,6 +94,21 @@ class UserManagement extends React.Component<Props> {
           {this.props.usersList.length ? (
             <PaginatedList
               data={this.props.usersList}
+              sortItems={this.props.sortByRole}
+              getSortedItems={(items: any[]) => items.sort((a, b) => a.role > b.role ? 1 : -1)}
+              perPage={this.props.pagination.perPage}
+              onHeaderRender={(items: any[]) => (
+                <UserListHeader
+                  allUsersSelected={this.props.allUsersSelected}
+                  onAllUsersSelectionChanged={(
+                    selected: boolean,
+                    users: any[]
+                  ) => this.props.toggleAllUsersSelection(users, selected)}
+                  allUsers={items}
+                  sortByRole={this.props.sortByRole}
+                  toggleUserListSort={this.props.toggleUserListSort}
+                />
+              )}
               onItemRender={(user: any) => (
                 <UserCard
                   key={user.id}
@@ -115,6 +136,17 @@ const mapDispatchToProps = (dispatch: Function) => ({
   updateSelectedUsers: (selectedUsers: any[]) => {
     dispatch(actions.updateSelectedUsers(selectedUsers));
   },
+  toggleAllUsersSelection: (
+    selectedUsers: any[],
+    allUsersSelected: boolean
+  ) => {
+    dispatch(actions.toggleAllUsersSelection(selectedUsers, allUsersSelected));
+  },
+  toggleUserListSort: (
+    sortBy: string, sort: boolean
+  ) => {
+    dispatch(actions.toggleUserListSort(sortBy, sort))
+  }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserManagement);
