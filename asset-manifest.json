@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/klaus-app/static/css/main.526c3c9a.chunk.css",
-    "main.js": "/klaus-app/static/js/main.2fe332c5.chunk.js",
-    "main.js.map": "/klaus-app/static/js/main.2fe332c5.chunk.js.map",
+    "main.css": "/klaus-app/static/css/main.9e53aec5.chunk.css",
+    "main.js": "/klaus-app/static/js/main.4a892710.chunk.js",
+    "main.js.map": "/klaus-app/static/js/main.4a892710.chunk.js.map",
     "runtime-main.js": "/klaus-app/static/js/runtime-main.6e866538.js",
     "runtime-main.js.map": "/klaus-app/static/js/runtime-main.6e866538.js.map",
-    "static/js/2.a04a27e9.chunk.js": "/klaus-app/static/js/2.a04a27e9.chunk.js",
-    "static/js/2.a04a27e9.chunk.js.map": "/klaus-app/static/js/2.a04a27e9.chunk.js.map",
+    "static/js/2.12f2b4e1.chunk.js": "/klaus-app/static/js/2.12f2b4e1.chunk.js",
+    "static/js/2.12f2b4e1.chunk.js.map": "/klaus-app/static/js/2.12f2b4e1.chunk.js.map",
     "index.html": "/klaus-app/index.html",
-    "precache-manifest.90b3ad6f11363e3ff75df37dca462729.js": "/klaus-app/precache-manifest.90b3ad6f11363e3ff75df37dca462729.js",
+    "precache-manifest.157132bd70071ddaa2a5106eed9393c0.js": "/klaus-app/precache-manifest.157132bd70071ddaa2a5106eed9393c0.js",
     "service-worker.js": "/klaus-app/service-worker.js",
-    "static/css/main.526c3c9a.chunk.css.map": "/klaus-app/static/css/main.526c3c9a.chunk.css.map",
-    "static/js/2.a04a27e9.chunk.js.LICENSE.txt": "/klaus-app/static/js/2.a04a27e9.chunk.js.LICENSE.txt",
-    "static/media/PaginatedList.module.css": "/klaus-app/static/media/SFProText-Regular.85bd46c1.ttf",
-    "static/media/UserManagement.module.css": "/klaus-app/static/media/SFProText-Medium.70830fa4.ttf"
+    "static/css/main.9e53aec5.chunk.css.map": "/klaus-app/static/css/main.9e53aec5.chunk.css.map",
+    "static/js/2.12f2b4e1.chunk.js.LICENSE.txt": "/klaus-app/static/js/2.12f2b4e1.chunk.js.LICENSE.txt",
+    "static/media/UserListHeader.module.css": "/klaus-app/static/media/SFProText-Medium.70830fa4.ttf",
+    "static/media/PaginatedList.module.css": "/klaus-app/static/media/SFProText-Regular.85bd46c1.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.6e866538.js",
-    "static/js/2.a04a27e9.chunk.js",
-    "static/css/main.526c3c9a.chunk.css",
-    "static/js/main.2fe332c5.chunk.js"
+    "static/js/2.12f2b4e1.chunk.js",
+    "static/css/main.9e53aec5.chunk.css",
+    "static/js/main.4a892710.chunk.js"
   ]
 }

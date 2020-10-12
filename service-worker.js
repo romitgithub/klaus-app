@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/klaus-app/precache-manifest.90b3ad6f11363e3ff75df37dca462729.js"
+  "/klaus-app/precache-manifest.157132bd70071ddaa2a5106eed9393c0.js"
 );
 
 self.addEventListener('message', (event) => {

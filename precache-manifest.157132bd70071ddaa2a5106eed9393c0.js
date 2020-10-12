@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2a1a7bf2495c09a47a4861024f4268b2",
+    "revision": "0903b869b8fdf4e25ebd59313c5d61f0",
     "url": "/klaus-app/index.html"
   },
   {
-    "revision": "69165e63e40fb4039441",
-    "url": "/klaus-app/static/css/main.526c3c9a.chunk.css"
+    "revision": "5131eeab1a306215f2ad",
+    "url": "/klaus-app/static/css/main.9e53aec5.chunk.css"
   },
   {
-    "revision": "a4db31c4e00058ebdbe7",
-    "url": "/klaus-app/static/js/2.a04a27e9.chunk.js"
+    "revision": "06603ac6ea3b57771855",
+    "url": "/klaus-app/static/js/2.12f2b4e1.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/klaus-app/static/js/2.a04a27e9.chunk.js.LICENSE.txt"
+    "url": "/klaus-app/static/js/2.12f2b4e1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "69165e63e40fb4039441",
-    "url": "/klaus-app/static/js/main.2fe332c5.chunk.js"
+    "revision": "5131eeab1a306215f2ad",
+    "url": "/klaus-app/static/js/main.4a892710.chunk.js"
   },
   {
     "revision": "bed71e02db5f32485ec2",
