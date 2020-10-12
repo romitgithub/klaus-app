@@ -1,4 +1,5 @@
 import React from "react";
+import downArrow from "assets/img/down-arrow.png";
 import styles from "./UserListHeader.module.css";
 
 interface Props {
@@ -14,7 +15,7 @@ export default ({
   allUsersSelected,
   allUsers,
   sortByRole,
-  toggleUserListSort
+  toggleUserListSort,
 }: Props) => {
   return (
     <div className={`${styles.container}`}>
@@ -27,7 +28,15 @@ export default ({
         }
       />
       <div className={styles.name}>User</div>
-      <div onClick={() => toggleUserListSort('sortByRole', !sortByRole)} className={styles.role}>Permission</div>
+      <div
+        onClick={() => toggleUserListSort("sortByRole", !sortByRole)}
+        className={styles.role}
+      >
+        Permission
+        {sortByRole ? (
+          <img className={styles.sortIcon} src={downArrow} alt="sorted" />
+        ) : null}
+      </div>
     </div>
   );
 };

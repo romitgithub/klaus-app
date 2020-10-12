@@ -29,7 +29,6 @@
   padding: 16px;
   background-color: white;
   border-radius: 4px;
-  cursor: pointer;
   border-left: 4px solid transparent;
 }
 
@@ -44,6 +43,7 @@
 
 .checkbox {
   margin-right: 12px;
+  cursor: pointer;
 }
 
 .avatar {

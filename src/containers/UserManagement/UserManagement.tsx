@@ -20,6 +20,7 @@ interface Props {
   updateSelectedUsers: Function;
   toggleAllUsersSelection: Function;
   toggleUserListSort: Function;
+  updatePage: Function;
 }
 
 class UserManagement extends React.Component<Props> {
@@ -95,8 +96,12 @@ class UserManagement extends React.Component<Props> {
             <PaginatedList
               data={this.props.usersList}
               sortItems={this.props.sortByRole}
-              getSortedItems={(items: any[]) => items.sort((a, b) => a.role > b.role ? 1 : -1)}
+              getSortedItems={(items: any[]) =>
+                items.sort((a, b) => (a.role > b.role ? 1 : -1))
+              }
+              page={this.props.pagination.page}
               perPage={this.props.pagination.perPage}
+              updatePage={this.props.updatePage}
               onHeaderRender={(items: any[]) => (
                 <UserListHeader
                   allUsersSelected={this.props.allUsersSelected}
@@ -142,11 +147,12 @@ const mapDispatchToProps = (dispatch: Function) => ({
   ) => {
     dispatch(actions.toggleAllUsersSelection(selectedUsers, allUsersSelected));
   },
-  toggleUserListSort: (
-    sortBy: string, sort: boolean
-  ) => {
-    dispatch(actions.toggleUserListSort(sortBy, sort))
-  }
+  toggleUserListSort: (sortBy: string, sort: boolean) => {
+    dispatch(actions.toggleUserListSort(sortBy, sort));
+  },
+  updatePage: (page: number) => {
+    dispatch(actions.updatePage(page));
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserManagement);
