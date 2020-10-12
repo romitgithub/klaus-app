@@ -1,3 +1,4 @@
+import { User } from "interface/User.interface";
 import ApiService from "services/ApiService";
 import ACTION_TYPES from "./actionType";
 
@@ -21,7 +22,7 @@ export const fetchUsersList = () => {
   };
 };
 
-export const updateSelectedUsers = (selectedUsers: any[]) => {
+export const updateSelectedUsers = (selectedUsers: number[]) => {
   return (dispatch: Function) => {
     dispatch({
       type: ACTION_TYPES.UPDATE_SELECTED_USERS,
@@ -31,7 +32,7 @@ export const updateSelectedUsers = (selectedUsers: any[]) => {
 };
 
 export const toggleAllUsersSelection = (
-  selectedUsers: any[],
+  selectedUsers: User[],
   allSelected: boolean
 ) => {
   const selectedUsersId = selectedUsers.map((item) => item.id);

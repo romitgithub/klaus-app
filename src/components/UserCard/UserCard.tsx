@@ -3,6 +3,7 @@ import { getUserRoleName } from "services/utils";
 import editIcon from "assets/img/edit.png";
 import deleteIcon from "assets/img/delete.png";
 import styles from "./UserCard.module.css";
+import { User } from "interface/User.interface";
 
 const getClassNameForRole = (role: string) => {
   switch (role) {
@@ -20,7 +21,7 @@ const getClassNameForRole = (role: string) => {
 };
 
 interface Props {
-  user: any;
+  user: User;
   onUserSelectionChanged: Function;
   isSelected: boolean;
 }

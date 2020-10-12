@@ -1,0 +1,71 @@
+@value colors: "../../../styles/colors.css";
+@value primary_color from colors;
+
+.header {
+  padding: 24px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filterOptions {
+  display: flex;
+  align-items: center;
+}
+
+.searchBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border: 1px solid #e2e8f0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 12px;
+}
+
+.searchIcon {
+  width: 14px;
+  margin-right: 8px;
+}
+
+.searchInput {
+  background: #ffffff;
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+  width: 200px;
+  font-family: "SFProText";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: #a0aec0;
+}
+
+.connectUsersBtn {
+  border: none;
+  outline: none;
+  height: 40px;
+  margin-left: 8px;
+  background: primary_color;
+  border-radius: 4px;
+  padding: 4px 12px;
+  font-family: "SFProText-Medium";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+color: #ffffff;
+}
+
+.title {
+  font-family: "SFProText-Bold";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+  color: #1a202c;
+}

@@ -36,6 +36,7 @@ const userManagementReducer = (
         ...state,
         selectedUsers: [],
         allUsersSelected: false,
+
         pagination: { ...state.pagination, page: action.data },
       };
     default:

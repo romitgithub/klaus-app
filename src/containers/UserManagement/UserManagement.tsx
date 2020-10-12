@@ -1,20 +1,23 @@
 import React from "react";
 import { connect } from "react-redux";
 import * as actions from "./actions";
+
 import PaginatedList from "components/PaginatedList";
 import UserCard from "components/UserCard/";
-import editIcon from "assets/img/edit.png";
-import deleteIcon from "assets/img/delete.png";
-import searchIcon from "assets/img/search.png";
+
+import { User } from "interface/User.interface";
+
+import Header from "./Header";
+import ListActionsHeader from "./ListActionsHeader";
+import ListTableHeader from "./ListTableHeader";
 
 import styles from "./UserManagement.module.css";
-import UserListHeader from "components/UserListHeader/UserListHeader";
 
 interface Props {
   fetchUsersList: Function;
-  usersList: any[];
+  usersList: User[];
   allUsersSelected: boolean;
-  selectedUsers: any[];
+  selectedUsers: number[];
   pagination: any;
   sortByRole: boolean;
   updateSelectedUsers: Function;
@@ -39,82 +42,40 @@ class UserManagement extends React.Component<Props> {
     this.props.updateSelectedUsers([...selectedUsers]);
   };
 
+  sortUserList = (users: User[]) => {
+    return users.sort((userA, userB) => (userA.role > userB.role ? 1 : -1));
+  };
+
   render() {
     console.log(this.props);
     return (
       <div className={styles.container}>
-        <div className={styles.header}>
-          <div className={styles.title}>Account users</div>
-          <div className={styles.filterOptions}>
-            <div className={styles.searchBox}>
-              <img
-                src={searchIcon}
-                alt="Search Users"
-                className={styles.searchIcon}
-              />
-              <input
-                placeholder="Search"
-                type="text"
-                className={styles.searchInput}
-              />
-            </div>
-            <button className={styles.connectUsersBtn}>Connect Users</button>
-          </div>
-        </div>
-        <div className={styles.list}>
-          {this.props.selectedUsers.length ? (
-            <div className={styles.listActionHeader}>
-              <span className={styles.listActionTitle}>
-                {this.props.selectedUsers.length} users selected
-              </span>
-              <button className={styles.listActionButton}>
-                {" "}
-                <img
-                  src={editIcon}
-                  alt="edit users"
-                  className={styles.editIcon}
-                />{" "}
-                Edit
-              </button>
-              <button className={styles.listActionButton}>
-                <img
-                  src={deleteIcon}
-                  alt="delete users"
-                  className={styles.deleteIcon}
-                />{" "}
-                Delete
-              </button>
-            </div>
-          ) : (
-            <div className={styles.listActionHeader}>
-              <span className={styles.listActionTitle}>
-                {this.props.usersList.length} users
-              </span>
-            </div>
-          )}
-          {this.props.usersList.length ? (
+        <Header />
+        {this.props.usersList.length ? (
+          <div className={styles.list}>
+            <ListActionsHeader
+              totalUsers={this.props.usersList.length}
+              selectedUsers={this.props.selectedUsers.length}
+            />
             <PaginatedList
               data={this.props.usersList}
               sortItems={this.props.sortByRole}
-              getSortedItems={(items: any[]) =>
-                items.sort((a, b) => (a.role > b.role ? 1 : -1))
-              }
+              getSortedItems={this.sortUserList}
               page={this.props.pagination.page}
               perPage={this.props.pagination.perPage}
               updatePage={this.props.updatePage}
-              onHeaderRender={(items: any[]) => (
-                <UserListHeader
+              onHeaderRender={(items: User[]) => (
+                <ListTableHeader
                   allUsersSelected={this.props.allUsersSelected}
-                  onAllUsersSelectionChanged={(
-                    selected: boolean,
-                    users: any[]
-                  ) => this.props.toggleAllUsersSelection(users, selected)}
+                  toggleAllUsersSelection={(selected: boolean, users: User[]) =>
+                    this.props.toggleAllUsersSelection(users, selected)
+                  }
                   allUsers={items}
                   sortByRole={this.props.sortByRole}
                   toggleUserListSort={this.props.toggleUserListSort}
                 />
               )}
-              onItemRender={(user: any) => (
+              onItemRender={(user: User) => (
                 <UserCard
                   key={user.id}
                   user={user}
@@ -123,8 +84,9 @@ class UserManagement extends React.Component<Props> {
                 />
               )}
             />
-          ) : null}
-        </div>
+            )
+          </div>
+        ) : null}
       </div>
     );
   }
@@ -138,11 +100,11 @@ const mapDispatchToProps = (dispatch: Function) => ({
   fetchUsersList: () => {
     dispatch(actions.fetchUsersList());
   },
-  updateSelectedUsers: (selectedUsers: any[]) => {
+  updateSelectedUsers: (selectedUsers: number[]) => {
     dispatch(actions.updateSelectedUsers(selectedUsers));
   },
   toggleAllUsersSelection: (
-    selectedUsers: any[],
+    selectedUsers: User[],
     allUsersSelected: boolean
   ) => {
     dispatch(actions.toggleAllUsersSelection(selectedUsers, allUsersSelected));

@@ -24,13 +24,11 @@ export default class EventsList extends React.Component<Props> {
   };
 
   handleNextClick = () => {
-    // this.setState({ page: this.state.page + 1 });
     const newPage = this.props.page + 1;
     this.props.updatePage(newPage);
   };
 
   handlePrevClick = () => {
-    // this.setState({ page: this.state.page - 1 });
     const newPage = this.props.page - 1;
     this.props.updatePage(newPage);
   };

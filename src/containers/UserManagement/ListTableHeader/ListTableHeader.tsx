@@ -1,17 +1,18 @@
 import React from "react";
 import downArrow from "assets/img/down-arrow.png";
-import styles from "./UserListHeader.module.css";
+import styles from "./ListTableHeader.module.css";
+import { User } from "interface/User.interface";
 
 interface Props {
-  onAllUsersSelectionChanged: Function;
+  toggleAllUsersSelection: Function;
   allUsersSelected: boolean;
-  allUsers: any[];
+  allUsers: User[];
   sortByRole: boolean;
   toggleUserListSort: Function;
 }
 
 export default ({
-  onAllUsersSelectionChanged,
+  toggleAllUsersSelection,
   allUsersSelected,
   allUsers,
   sortByRole,
@@ -24,7 +25,7 @@ export default ({
         type="checkbox"
         checked={allUsersSelected}
         onClick={(e: any) =>
-          onAllUsersSelectionChanged(e.target.checked, allUsers)
+          toggleAllUsersSelection(e.target.checked, allUsers)
         }
       />
       <div className={styles.name}>User</div>
