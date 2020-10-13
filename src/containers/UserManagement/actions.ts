@@ -4,18 +4,20 @@ import ACTION_TYPES from "./actionType";
 
 export const fetchUsersList = () => {
   return (dispatch: Function) => {
+    dispatch(toggleLoadingState(true));
     ApiService.get(
       "https://raw.githubusercontent.com/klausapp/frontend-engineer-test-task/master/users.json",
       {}
     ).then(
       (response) => {
-        console.log(response);
+        dispatch(toggleLoadingState(false));
         dispatch({
           type: ACTION_TYPES.FETCH_USER_LIST,
           data: response.users,
         });
       },
       (err) => {
+        dispatch(toggleLoadingState(false));
         console.log(err);
       }
     );
@@ -65,6 +67,15 @@ export const updatePage = (page: number) => {
     dispatch({
       type: ACTION_TYPES.UPDATE_PAGE,
       data: page,
+    });
+  };
+};
+
+export const toggleLoadingState = (loadingState: boolean) => {
+  return (dispatch: Function) => {
+    dispatch({
+      type: ACTION_TYPES.SET_IS_LOADING,
+      data: loadingState,
     });
   };
 };

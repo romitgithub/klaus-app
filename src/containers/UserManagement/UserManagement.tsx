@@ -24,6 +24,7 @@ interface Props {
   toggleAllUsersSelection: Function;
   toggleUserListSort: Function;
   updatePage: Function;
+  isLoadingUsers: boolean;
 }
 
 class UserManagement extends React.Component<Props> {
@@ -51,42 +52,51 @@ class UserManagement extends React.Component<Props> {
     return (
       <div className={styles.container}>
         <Header />
-        {this.props.usersList.length ? (
-          <div className={styles.list}>
-            <ListActionsHeader
-              totalUsers={this.props.usersList.length}
-              selectedUsers={this.props.selectedUsers.length}
-            />
-            <PaginatedList
-              data={this.props.usersList}
-              sortItems={this.props.sortByRole}
-              getSortedItems={this.sortUserList}
-              page={this.props.pagination.page}
-              perPage={this.props.pagination.perPage}
-              updatePage={this.props.updatePage}
-              onHeaderRender={(items: User[]) => (
-                <ListTableHeader
-                  allUsersSelected={this.props.allUsersSelected}
-                  toggleAllUsersSelection={(selected: boolean, users: User[]) =>
-                    this.props.toggleAllUsersSelection(users, selected)
-                  }
-                  allUsers={items}
-                  sortByRole={this.props.sortByRole}
-                  toggleUserListSort={this.props.toggleUserListSort}
+        {this.props.isLoadingUsers ? (
+          <div className={styles.loader}>Loading users...</div>
+        ) : (
+          <>
+            {this.props.usersList.length ? (
+              <div className={styles.list}>
+                <ListActionsHeader
+                  totalUsers={this.props.usersList.length}
+                  selectedUsers={this.props.selectedUsers.length}
                 />
-              )}
-              onItemRender={(user: User) => (
-                <UserCard
-                  key={user.id}
-                  user={user}
-                  onUserSelectionChanged={this.handleUserSelection}
-                  isSelected={this.props.selectedUsers.indexOf(user.id) !== -1}
+                <PaginatedList
+                  data={this.props.usersList}
+                  sortItems={this.props.sortByRole}
+                  getSortedItems={this.sortUserList}
+                  page={this.props.pagination.page}
+                  perPage={this.props.pagination.perPage}
+                  updatePage={this.props.updatePage}
+                  onHeaderRender={(items: User[]) => (
+                    <ListTableHeader
+                      allUsersSelected={this.props.allUsersSelected}
+                      toggleAllUsersSelection={(
+                        selected: boolean,
+                        users: User[]
+                      ) => this.props.toggleAllUsersSelection(users, selected)}
+                      allUsers={items}
+                      sortByRole={this.props.sortByRole}
+                      toggleUserListSort={this.props.toggleUserListSort}
+                    />
+                  )}
+                  onItemRender={(user: User) => (
+                    <UserCard
+                      key={user.id}
+                      user={user}
+                      onUserSelectionChanged={this.handleUserSelection}
+                      isSelected={
+                        this.props.selectedUsers.indexOf(user.id) !== -1
+                      }
+                    />
+                  )}
                 />
-              )}
-            />
-            )
-          </div>
-        ) : null}
+                )
+              </div>
+            ) : null}
+          </>
+        )}
       </div>
     );
   }

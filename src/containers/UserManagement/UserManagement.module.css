@@ -27,6 +27,14 @@
   overflow: hidden;
 }
 
+.loader {
+  font-family: 'SFProText';
+  font-size: 16px;
+  color: #a0aec0;
+  height: 300px;
+  line-height: 300px;
+}
+
 .list {
   background: #ffffff;
   border-radius: 8px;

@@ -39,6 +39,11 @@ const userManagementReducer = (
 
         pagination: { ...state.pagination, page: action.data },
       };
+    case ACTION_TYPES.SET_IS_LOADING:
+      return {
+        ...state,
+        isLoadingUsers: action.data,
+      };
     default:
       return state;
   }
