@@ -48,7 +48,6 @@ class UserManagement extends React.Component<Props> {
   };
 
   render() {
-    console.log(this.props);
     return (
       <div className={styles.container}>
         <Header />

@@ -42,6 +42,7 @@ export default ({ user, onUserSelectionChanged, isSelected }: Props) => {
         className={styles.checkbox}
         type="checkbox"
         checked={isSelected}
+        onChange={(e) => {}}
         onClick={(e: any) => onUserSelectionChanged(e.target.checked, user.id)}
       />
       <img className={styles.avatar} src={user.avatar} alt="user-avatar" />
