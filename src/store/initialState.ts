@@ -1,6 +1,7 @@
 const APP_INITIAL_STATE = {
   userManagementReducer: {
     usersList: [],
+    isLoadingUsers: false,
     pagination: {
       page: 0,
       perPage: 10,
