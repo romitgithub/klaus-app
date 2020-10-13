@@ -35,6 +35,18 @@
   width: 100%;
   padding: 16px;
   box-sizing: border-box;
+  align-items: center;
+}
+
+.pageCount {
+  font-size: 12px;
+  font-family: 'SFProText';
+  background: rgb(153 164 230 / 20%);
+  padding: 2px 6px;
+  text-align: center;
+  color: rgba(71, 93, 229, 1);
+  border-radius: 24%;
+  margin: 0 4px;
 }
 
 .paginationButtons {
@@ -46,7 +58,6 @@
   font-family: 'SFProText-Bold', arial;
   opacity: 0.8;
   padding: 8px;
-  margin-left: 4px;
   border-radius: 4px;
 }
 

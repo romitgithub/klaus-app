@@ -58,6 +58,7 @@ export default class EventsList extends React.Component<Props> {
           >
             Previous
           </button>
+          <div className={styles.pageCount}>{this.props.page + 1}</div>
           <button
             className={styles.paginationButtons}
             disabled={this.isLastPage()}
