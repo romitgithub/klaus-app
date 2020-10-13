@@ -36,7 +36,7 @@
   box-sizing: border-box;
   outline: none;
   width: 200px;
-  font-family: "SFProText";
+  font-family: "SFProText", arial;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -51,7 +51,7 @@
   background: primary_color;
   border-radius: 4px;
   padding: 4px 12px;
-  font-family: "SFProText-Medium";
+  font-family: "SFProText-Medium", arial;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -62,7 +62,7 @@ color: #ffffff;
 }
 
 .title {
-  font-family: "SFProText-Bold";
+  font-family: "SFProText-Bold", arial;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;

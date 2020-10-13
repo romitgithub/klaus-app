@@ -24,7 +24,7 @@ export default ({
         className={styles.checkbox}
         type="checkbox"
         checked={allUsersSelected}
-        onChange={e => {}}
+        onChange={(e) => {}}
         onClick={(e: any) =>
           toggleAllUsersSelection(e.target.checked, allUsers)
         }

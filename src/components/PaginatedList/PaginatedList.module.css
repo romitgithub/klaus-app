@@ -29,18 +29,6 @@
   overflow: scroll;
 }
 
-.loadMoreBtn {
-  font-family: 'SFProText-Bold';
-  margin: 12px 8px 0 8px;
-  padding: 24px;
-  background-color: white;
-  width: 784px;
-  border: none;
-  outline: none;
-  color: rgba(71, 93, 229, 1);
-  cursor: pointer;
-}
-
 .pagination {
   display: flex;
   justify-content: flex-end;
@@ -55,7 +43,7 @@
   color: rgba(71, 93, 229, 1);
   cursor: pointer;
   background-color: white;
-  font-family: 'SFProText-Bold';
+  font-family: 'SFProText-Bold', arial;
   opacity: 0.8;
   padding: 8px;
   margin-left: 4px;

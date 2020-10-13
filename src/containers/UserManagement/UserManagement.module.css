@@ -28,7 +28,7 @@
 }
 
 .loader {
-  font-family: 'SFProText';
+  font-family: 'SFProText', arial;
   font-size: 16px;
   color: #a0aec0;
   height: 300px;
